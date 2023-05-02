@@ -8,7 +8,7 @@ from google.cloud import bigquery
 import pandas as pd
 import pandas_gbq
 import uuid
-
+import argparse
 
 # Authenticate and create a BigQuery client
 def create_client(cred_json, project_id):
@@ -143,3 +143,14 @@ def upload_from_local_to_drive(gauth_cred, client_config_file, original_file_pat
     file = drive.CreateFile({'title': file_name, 'parents': [{'id': folder_id}]})
     file.SetContentFile(file_path)
     file.Upload()
+    
+    #Argparse module
+    import argparse
+    parser = argparse. Argumentarser()
+    parser.add_argument ("--ingestion-date", help="display a square of a given number",
+                        type=str)
+    parser .add_argument ("--reload", , help="display a square of a given number",
+                        type=str)
+    aggs = parser -parse_args()
+    print ("The flow is running for", args. ingestion_date, "with reload =", args.reload, ".
+)
