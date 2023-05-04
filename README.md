@@ -16,5 +16,16 @@ pip install -r requirements.txt
 # Dashboard
 Download the pbix file to your PC and select Refresh to display live data in the dashboard. The dashboard will be current after some time.
 
-Usage
+# Usage
 To use this repository, you can clone it to your local machine: git clone 
+https://github.com/bellamartirosyan/Stack-Overflow-Analysis/tree/main
+
+# Methods 
+I've been using a variety of sites over the last few months to study and construct the Stack Overflow database. BigQuery, a Google cloud-based data warehouse, was used to extract data from the Stack Overflow dataset in the beginning. I exported the necessary data from BigQuery to a JSON format using scripts and queries. I then used Google Drive, a cloud storage service offered by Google, to store and distribute the JSON files of the obtained data.
+In addition, I constructed the database using a number of software applications, including Python and SQL. Building the Stack Overflow database required the use of both SQL, a relational database management system, and Python, a computer language frequently used for data analysis and manipulation. Stack Overflow's public data dump, which gathers a sizable amount of user-generated content from the Stack Overflow website, as well as the Stack Exchange Data Explorer, which gives access to data from all Stack Exchange websites, including Stack Overflow, were additional datasets I used to create the database.
+In order to study and create the Stack Overflow database, I made use of a variety of tools, databases, and datasets. I was able to extract, save, and analyze the data with the help of these resources, and I want to use them again in the future to improve the database. I was able to build a comprehensive database that is useful to a variety of consumers by making use of these resources.
+
+# Keywords
+Stack Overflow, DEA, BigQuery
+# Contributing
+You can fork this repository and submit a pull request with your changes if you wish to add to it. Please be sure to utilize your Google Drive and Cloud login information, include tests to your code, and adhere to the current code style.
