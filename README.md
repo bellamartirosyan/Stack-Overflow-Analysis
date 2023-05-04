@@ -26,5 +26,5 @@ To have the necessary libraries run the following code: pip install -r requireme
 To use this repository, you can clone it to your local machine: git clone https://github.com/bellamartirosyan/Stack-Overflow-Analysis
 
 # Contributing
-You can fork this repository and make modifications by creating a pull request if you wish to contribute to it.. Please make sure to follow the existing code style and add tests for your code and use your credentials for Google Drive and Big Query.
+You can fork this repository and make modifications by creating a pull request if you wish to contribute to it.Please make sure to follow the existing code style and add tests for your code and use your credentials for Google Drive and Big Query.
 
