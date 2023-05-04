@@ -15,7 +15,16 @@ Overflow data for addressing research issues about software development.
 # Keywords 
 Stack Overflow, DEA, Stack Overflow Analysis
 
+
 # Methods
 A range of resources, including as datasets, databases, and software tools, were employed to develop and evaluate the Stack Overflow database. BigQuery, a cloud-based data warehouse, was used to extract the Stack Overflow dataset, which was then converted to JSON format using queries and scripts. The data was shared and stored via Google Drive. Other software tools employed were SQL, a relational database management system, and Python, a computer language frequently used for data analysis. The Stack Overflow public data dump and the Stack Exchange Data Explorer were two of the datasets used. Through the use of these resources over the past few months, the data could be extracted, stored, and analyzed effectively and efficiently.
 
-# 
+# Requirements
+To have the necessary libraries run the following code: pip install -r requirements.txt
+
+# Usage
+To use this repository, you can clone it to your local machine: git clone https://github.com/bellamartirosyan/Stack-Overflow-Analysis
+
+# Contributing
+You can fork this repository and make modifications by creating a pull request if you wish to contribute to it.. Please make sure to follow the existing code style and add tests for your code and use your credentials for Google Drive and Big Query.
+
