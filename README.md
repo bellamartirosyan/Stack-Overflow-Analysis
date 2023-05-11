@@ -15,24 +15,17 @@ pip install -r requirements.txt
 
 
 Requirements and Flow
-Please, perform the following steps to run the project locally:
+Please, perform the following steps to run the project in you local machine:
 
-make sure to have Python installed on your machine
-make sure to have all the files for this project in one directory
-create a Python virtual environment as follows:
+- 1) Please make sure to have Python installed on your machine
+- 2) Please make sure to have all the files for this project in one directory
+- 3) Please create a Python virtual environment as follows:
 python -m venv env
-activate the Python virtual environment created in the previous step as follows:
-env\Scripts\activate
-to install all the necessary libraries run the following code:
+-4) Please install all the necessary libraries run the following code:
 pip install -r requirements.txt
-run the infrastructure_initiation.py file only once as follows:
+-5) Please run the infrastructure_initiation.py file only once as follows:
 python infrastructure_initiation.py
-run data_check.py (optional) to check that the tables in the cloud have been created
-run the consumer file as follows:
-python ./consumer.py getting_started.ini
-run the producer file as follows:
-python ./producer.py getting_started.ini
-run data_check.py (optional) to check that the tables in the cloud have been updated 
+
 # Dashboard
 Download the pbix file to your PC and select Refresh to display live data in the dashboard. The dashboard will be current after some time.
 
