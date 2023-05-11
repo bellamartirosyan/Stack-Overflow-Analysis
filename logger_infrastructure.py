@@ -1,6 +1,6 @@
-import logging
-from config import log_folder, log_file_infr
 import os
+import logging
+from configs import log_folder, infrstr_log_file
 
 logfolder = os.getcwd() + '\\' + log_folder
 if not os.path.exists(logfolder):
@@ -8,6 +8,6 @@ if not os.path.exists(logfolder):
 
 logging.basicConfig(
     level=logging.INFO,
-    filename=os.path.join(log_folder, log_file_infr),
+    filename=os.path.join(logfolder, infrstr_log_file),
     format="%(asctime)s - %(levelname)s - %(message)s",
 )
