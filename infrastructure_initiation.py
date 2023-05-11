@@ -139,12 +139,6 @@ if __name__ == '__main__':
         dataset_id=config.dataset_id,
         table_name="posts_question_dim",
     )
-    logging.info("posts_question_dim has been created")
-    tasks.create_table(
-        client=client,
-        project_id=config.project_id,
-        dataset_id=config.dataset_id,
-        table_name="FactHouse_SCD2",
-    )
+   
     logging.info("posts_question_dim has been created")
 
