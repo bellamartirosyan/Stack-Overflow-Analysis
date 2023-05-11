@@ -24,7 +24,6 @@ def create_client(cred_json, project_id):
     client = bigquery.Client(credentials=credentials, project=project_id)
     return client
 
-
 def load_query(query_name):
     for script in os.listdir(config.queries):
         if query_name in script:
