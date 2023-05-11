@@ -13,6 +13,26 @@ To have the necessary libraries run the following code:
 
 pip install -r requirements.txt
 
+
+Requirements and Flow
+Please, perform the following steps to run the project locally:
+
+make sure to have Python installed on your machine
+make sure to have all the files for this project in one directory
+create a Python virtual environment as follows:
+python -m venv env
+activate the Python virtual environment created in the previous step as follows:
+env\Scripts\activate
+to install all the necessary libraries run the following code:
+pip install -r requirements.txt
+run the infrastructure_initiation.py file only once as follows:
+python infrastructure_initiation.py
+run data_check.py (optional) to check that the tables in the cloud have been created
+run the consumer file as follows:
+python ./consumer.py getting_started.ini
+run the producer file as follows:
+python ./producer.py getting_started.ini
+run data_check.py (optional) to check that the tables in the cloud have been updated 
 # Dashboard
 Download the pbix file to your PC and select Refresh to display live data in the dashboard. The dashboard will be current after some time.
 
@@ -35,3 +55,5 @@ The project also has Google Cloud/Drive Credentials that are secret files and ar
 - velvety-ring-349218-0b355d98e0e7.json: Google Cloud Service Account credentials
 - client_secrets.json: Google Cloud Client ID credentials
 - velvety-ring-349218-f9ffa94dc6a5.json: Google Drive credentials
+
+
