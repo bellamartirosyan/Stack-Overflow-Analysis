@@ -17,9 +17,9 @@ pip install -r requirements.txt
 Requirements and Flow
 Please, perform the following steps to run the project in you local machine:
 
-- 1) Please make sure to have Python installed on your machine
-- 2) Please make sure to have all the files for this project in one directory
-- 3) Please create a Python virtual environment as follows:
+-1) Please make sure to have Python installed on your machine
+-2) Please make sure to have all the files for this project in one directory
+-3) Please create a Python virtual environment as follows:
 python -m venv env
 -4) Please install all the necessary libraries run the following code:
 pip install -r requirements.txt
