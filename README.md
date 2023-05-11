@@ -32,6 +32,6 @@ You can fork this repository and submit a pull request with your changes if you 
 
 # Credentials
 The project also has Google Cloud/Drive Credentials that are secret files and are delivered by email. Please, download the files from the email message and place the files in the project folder when running the code. The secret files are:
-velvety-ring-349218-0b355d98e0e7.json: Google Cloud Service Account credentials
-client_secrets.json: Google Cloud Client ID credentials
-velvety-ring-349218-f9ffa94dc6a5.json: Google Drive credentials
+- velvety-ring-349218-0b355d98e0e7.json: Google Cloud Service Account credentials
+- client_secrets.json: Google Cloud Client ID credentials
+- velvety-ring-349218-f9ffa94dc6a5.json: Google Drive credentials
