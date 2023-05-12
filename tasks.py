@@ -9,7 +9,6 @@ import pandas as pd
 import pandas_gbq
 import uuid
 import argparse
-from logging import logger
 def my_function():
     logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO)
     logger.debug('This is a debug message')
