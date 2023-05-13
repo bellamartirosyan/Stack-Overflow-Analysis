@@ -49,7 +49,12 @@ if __name__ == "__main__":
     )
     logging.info(f"Client has been created in the following location {config.project_id}")
 
-    # Upload csv file from local computer to Google Drive folder
+    tasks.retrieve_data(
+        client=client, project_id=config.project_id, table_dict=config.dest_file_templates, dataset_id=config.dataset_id,ingestion_date=str(args.ingestion_date),download_folder=config.download_folder
+
+    )
+
+    # Upload json file from local computer to Google Drive folder
     tasks.upload_from_local_to_drive(
         gauth_cred=config.gauth_cred,
         client_config_file=config.client_config_file,
