@@ -9,13 +9,14 @@ import pandas as pd
 import pandas_gbq
 import uuid
 import argparse
-def my_function():
-    logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO)
-    logger.debug('This is a debug message')
-    logger.info('This is an info message')
-    logger.warning('This is a warning message')
-    logger.error('This is an error message')
-    logger.critical('This is a critical message') 
+
+# def my_function():
+#     logger.basicConfig(format='%(asctime)s - %(message)s', level=logger.INFO)
+#     logger.debug('This is a debug message')
+#     logger.info('This is an info message')
+#     logger.warning('This is a warning message')
+#     logger.error('This is an error message')
+#     logger.critical('This is a critical message') 
 
 # Authenticate and create a BigQuery client
 def create_client(cred_json, project_id):
@@ -23,25 +24,36 @@ def create_client(cred_json, project_id):
     client = bigquery.Client(credentials=credentials, project=project_id)
     return client
 
-# Upload data to Google Drive
-def upload_from_local_to_drive(gauth_cred, client_config_file, folder_id, filename, file_name):
 
-    gauth = GoogleAuth()
+# def upload_from_local_to_drive(gauth_cred, client_config_file, folder_id, filename, file_name):
 
-    # Loads previously saved credentials file if available, otherwise authorizes user and saves new credentials.
-    gauth.LoadCredentialsFile(gauth_cred)
-    if gauth.credentials is None:
-        gauth.DEFAULT_SETTINGS['client_config_file'] = client_config_file
-        gauth.LocalWebserverAuth()
-        gauth.SaveCredentialsFile(gauth_cred)
+#     gauth = GoogleAuth()
+#Download data from Bigquery
+def retrieve_table(client,project_id,table_name, dataset_id, dest_file_template,ingestion_date,download_folder):
 
-    drive = GoogleDrive(gauth)
+    # Set the name of the source table
+    table_id = "{project_id}.{dataset_id}.{table_name}".format(project_id=project_id, dataset_id=dataset_id, table_name=table_name)
 
-    file_path = 'C:/Users/awsom/Desktop/kafka_confluent/kafka-python-getting-started/' + filename
-    # Uploads the new JSON file to a specified Google Drive folder.
-    file = drive.CreateFile({'title': file_name, 'parents': [{'id': folder_id}]})
-    file.SetContentFile(filename)
-    file.Upload()
+    # Set the path to the JSON file to save
+    destination_file_name = dest_file_template.format(ingestion_date=ingestion_date.replace("-", " "))
+    dest_file_path = os.path.join(download_folder, destination_file_name)
+    #"/Users/izabellamartirosyan/Desktop/Capstone/post_answers.json"
+    retrieve_data_script = load_query("retrieve_data_{}".format(table_name)).format(
+        project_id=project_id, dataset_id=dataset_id, table_name=table_name, ingestion_date=ingestion_date)
+    # Execute the query
+    query_job = client.query(retrieve_data_script)
+
+    # Save the query results to a JSON file
+    with open(dest_file_path, "w") as destination_file:
+        query_job.result().to_dataframe().to_json(destination_file, orient="records")
+
+#retrive data
+def retrieve_data(client,project_id, table_dict, dataset_id,ingestion_date,download_folder):
+    for key,value in table_dict.items():
+        print(key,value)
+        retrieve_table(client,project_id,key, dataset_id, value,ingestion_date,download_folder)
+
+ 
 
 
 # Add data from Drive to BigQuery tables
@@ -89,10 +101,10 @@ def add_data_to_raw_table(gauth_cred, cred_json, client_config_file, folder_id, 
 
 
 def load_query(query_name):
-    query_location = os.getcwd() + configs.queries
+    query_location = os.getcwd() + config.queries
     for script in os.listdir(query_location):
         if query_name in script:
-            with open(query_location + '\\' + script, 'r') as script_file:
+            with open(query_location + '/' + script, 'r') as script_file:
                 sql_script = script_file.read()
             break
     return sql_script
